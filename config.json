@@ -21,19 +21,19 @@
         "data_dir": "./data/Sample3/",
         "train":{
             "csv_name": "train_sample3.csv",
-            "batch_size": 2,
+            "batch_size": 64,
             "shuffle": true,
             "num_workers": 2
         },
         "validation": {
             "csv_name": "val_sample3.csv",
-            "batch_size": 2,
+            "batch_size": 64,
             "shuffle": true,
             "num_workers": 2
         },
         "test": {
             "csv_name": "test_sample3.csv",
-            "batch_size": 2,
+            "batch_size": 64,
             "shuffle": false,
             "num_workers": 1
         }
