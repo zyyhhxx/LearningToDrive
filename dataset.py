@@ -120,9 +120,9 @@ class Drive360(object):
             # If challenge participants have a greater temporal length than 10s for each training sample, then they
             # must write a custom function here.
 
-#            self.indices = self.dataframe.groupby('chapter').apply(
-#                lambda x: x.iloc[100:]).index.droplevel(
-#                level=0).tolist()
+            self.indices = self.dataframe.groupby('chapter').apply(
+                lambda x: x.iloc[2:]).index.droplevel(
+                level=0).tolist()
             if 'canSteering' not in self.dataframe.columns:
                 self.dataframe['canSteering'] = [0.0 for _ in range(len(self.dataframe))]
             if 'canSpeed' not in self.dataframe.columns:
