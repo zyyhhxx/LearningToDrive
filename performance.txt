@@ -1,3 +1,4 @@
+64-batch:
 (Default Model, SGD optimizer, SmoothL1Loss): 
 Minutes elapsed: 1.93
 Steering Error: 9.127523422241211
@@ -21,4 +22,10 @@ Minutes elapsed: 1.94
 Steering Error: 9.31459903717041
 Speed Error: 34.388492584228516
 Minutes elapsed: 0.12
+--------------------------------------------------------------
+128-batch:
+(Resnet50 Model, AdamW optimizer, SmoothL1Loss): 
+Training minutes elapsed epoch0: 2.11
+Steering Error: 4.756214141845703
+Speed Error: 18.597074508666992
 --------------------------------------------------------------
