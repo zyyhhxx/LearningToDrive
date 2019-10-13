@@ -1,5 +1,6 @@
 /data
 /submissions
+submission.csv
 model.pt
 /.ipynb_checkpoints
 /__pycache__
