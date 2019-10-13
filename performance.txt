@@ -1,0 +1,24 @@
+(Default Model, SGD optimizer, SmoothL1Loss): 
+Minutes elapsed: 1.93
+Steering Error: 9.127523422241211
+Speed Error: 35.79541778564453
+Minutes elapsed: 0.12
+--------------------------------------------------------------
+(Default Model, Adam optimizer, SmoothL1Loss): 
+Minutes elapsed: 1.94
+Steering Error: 9.074857711791992
+Speed Error: 34.745849609375
+Minutes elapsed: 0.11
+--------------------------------------------------------------
+(Resnet50 Model, SGD optimizer, SmoothL1Loss): 
+Minutes elapsed: 1.95
+Steering Error: 8.852355003356934
+Speed Error: 34.81289291381836
+Minutes elapsed: 0.12
+--------------------------------------------------------------
+(Resnet101 Model, SGD optimizer, SmoothL1Loss): 
+Minutes elapsed: 1.94
+Steering Error: 9.31459903717041
+Speed Error: 34.388492584228516
+Minutes elapsed: 0.12
+--------------------------------------------------------------
