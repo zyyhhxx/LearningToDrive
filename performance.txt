@@ -29,3 +29,4 @@ Training minutes elapsed epoch0: 2.11
 Steering Error: 4.756214141845703
 Speed Error: 18.597074508666992
 --------------------------------------------------------------
+current best: (Resnet50 Model, AdamW optimizer lr 0.0001 50 epochs, SmoothL1Loss)
