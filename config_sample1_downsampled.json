@@ -15,10 +15,10 @@
     },
     "data_loader": {
         "historic":{
-            "number": 2,
+            "number": 3,
             "frequency": 1
         },
-        "data_dir": "./data/Sample1_downsampled/",
+        "data_dir": "./data/Sample1_downsampled_2/",
         "train":{
             "csv_name": "train_sample1.csv",
             "batch_size": 64,
