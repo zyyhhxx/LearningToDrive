@@ -39,6 +39,8 @@
         }
     },
     "truncate": 2,
+    "initial_offset": 19,
+    "interval": 40,
     "target":{
         "normalize": true,
         "mean": {"canSteering": -5.406788214535221,
