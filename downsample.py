@@ -3,7 +3,7 @@ import scipy
 import imageio
 from PIL import Image
 
-def resize_image(f_name, output_name, resize_shape=(180, 320)):
+def resize_image(f_name, output_name, resize_shape=(90, 160)):
     im = Image.open(f_name)
     sampled_image = im.resize(resize_shape)
     imageio.imwrite(output_name, sampled_image)
@@ -35,4 +35,4 @@ def downsample(src_path, dst_path):
                         print("Finishes chapter:" + chapter_path)
         print("Finishes location:" + loc_path)
     print("All done!")
-downsample("./data/Sample1", "./data/Sample1_downsampled")
+downsample("./data/Sample1", "./data/Sample1_downsampled_2")
