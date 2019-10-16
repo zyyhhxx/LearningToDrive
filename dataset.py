@@ -45,7 +45,7 @@ class Drive360(object):
     ## phase (string) to specifiy either 'train', 'test', 'validation'
     def __init__(self, config, phase):
         self.config = config
-        self.data_dir = config['data_loader']['data_dir']
+        self.data_dir = config['data_loader'][phase]['data_dir']
         self.csv_name = config['data_loader'][phase]['csv_name']
         self.shuffle = config['data_loader'][phase]['shuffle']
         self.history_number = config['data_loader']['historic']['number']
