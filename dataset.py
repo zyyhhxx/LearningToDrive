@@ -63,6 +63,7 @@ class Drive360(object):
         self.front = self.config['front']
         self.right_left = config['multi_camera']['right_left']
         self.rear = config['multi_camera']['rear']
+        self.truncate_test = config['truncate']
 
         #### reading in dataframe from csv #####
         self.dataframe = pd.read_csv(os.path.join(self.data_dir, self.csv_name),
@@ -121,7 +122,7 @@ class Drive360(object):
             # must write a custom function here.
 
             self.indices = self.dataframe.groupby('chapter').apply(
-                lambda x: x.iloc[2:]).index.droplevel(
+                lambda x: x.iloc[self.truncate_test:]).index.droplevel(
                 level=0).tolist()
             if 'canSteering' not in self.dataframe.columns:
                 self.dataframe['canSteering'] = [0.0 for _ in range(len(self.dataframe))]

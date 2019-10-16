@@ -38,6 +38,7 @@
             "num_workers": 2
         }
     },
+    "truncate": 2,
     "target":{
         "normalize": true,
         "mean": {"canSteering": -5.406788214535221,
