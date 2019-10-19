@@ -64,6 +64,7 @@ class Drive360(object):
         self.tomtom = config['tomtom']
         self.right_left = config['multi_camera']['right_left']
         self.rear = config['multi_camera']['rear']
+        self.here = self.config['here']['enabled']
         self.here_number = self.config['here']['number']
         self.here_frequency = self.config['here']['frequency']
         self.truncate_test = config['truncate']
@@ -74,6 +75,7 @@ class Drive360(object):
                                             'cameraRear': object,
                                             'cameraRight': object,
                                             'cameraLeft': object,
+                                            'here': object,
                                             'tomtom': object,
                                             'hereMmLatitude': np.float32,
                                             'hereMmLongitude': np.float32,
@@ -216,29 +218,38 @@ class Drive360(object):
                                      std=config['image']['norm']['std'])
             ]),
             'test': transforms.Compose([
-                transforms.Resize((320, 180)),
                 transforms.ToTensor(),
                 transforms.Normalize(mean=config['image']['norm']['mean'],
                                      std=config['image']['norm']['std'])
             ])}
         tomtom_transforms = {
             'train': transforms.Compose([
-                transforms.Resize((375, 250)),
-                transforms.Resize(224),
                 transforms.ToTensor(),
                 transforms.Normalize(mean=[0.6841898743159287, 0.6942467588984359, 0.63074608385988107],
                                      std=[0.054145950202715391, 0.056086449019928965, 0.080349866693504177])
             ]),
             'validation': transforms.Compose([
-                transforms.Resize((375, 250)),
-                transforms.Resize(224),
                 transforms.ToTensor(),
                 transforms.Normalize(mean=[0.6841898743159287, 0.6942467588984359, 0.63074608385988107],
                                      std=[0.054145950202715391, 0.056086449019928965, 0.080349866693504177])
             ]),
             'test': transforms.Compose([
-                transforms.Resize((375, 250)),
-                transforms.Resize(224),
+                transforms.ToTensor(),
+                transforms.Normalize(mean=[0.6841898743159287, 0.6942467588984359, 0.63074608385988107],
+                                     std=[0.054145950202715391, 0.056086449019928965, 0.080349866693504177])
+            ])}
+        here_transforms = {
+            'train': transforms.Compose([
+                transforms.ToTensor(),
+                transforms.Normalize(mean=[0.6841898743159287, 0.6942467588984359, 0.63074608385988107],
+                                     std=[0.054145950202715391, 0.056086449019928965, 0.080349866693504177])
+            ]),
+            'validation': transforms.Compose([
+                transforms.ToTensor(),
+                transforms.Normalize(mean=[0.6841898743159287, 0.6942467588984359, 0.63074608385988107],
+                                     std=[0.054145950202715391, 0.056086449019928965, 0.080349866693504177])
+            ]),
+            'test': transforms.Compose([
                 transforms.ToTensor(),
                 transforms.Normalize(mean=[0.6841898743159287, 0.6942467588984359, 0.63074608385988107],
                                      std=[0.054145950202715391, 0.056086449019928965, 0.080349866693504177])
@@ -260,7 +271,8 @@ class Drive360(object):
             inputs['cameraFront'] = {}
             for row_idx, (_, row) in enumerate(rows.iterrows()):
                 inputs['cameraFront'][row_idx] = (self.imageFront_transform(Image.open(self.data_dir + row['cameraFront'])))
-
+        
+        
         if self.tomtom:
             inputs['tomtom'] = self.tomtom_transform(Image.open(self.data_dir + rows['tomtom'].iloc[0]))
         if self.right_left:
@@ -268,7 +280,8 @@ class Drive360(object):
             inputs['cameraLeft'] = self.imageSides_transform(Image.open(self.data_dir + rows['cameraLeft'].iloc[0]))
         if self.rear:
             inputs['cameraRear'] = self.imageSides_transform(Image.open(self.data_dir + rows['cameraRear'].iloc[0]))
-
+        if self.here:
+            inputs['here'] = self.here_transform(Image.open(self.data_dir + rows['here'].iloc[0]))
         ##### getting here data #####
         here_end = index - self.here_sequence_length
         here_skip = int(-1 * self.here_frequency)
