@@ -258,7 +258,7 @@ class Drive360(object):
         self.imageFront_transform = front_transforms[phase]
         self.imageSides_transform = sides_transforms[phase]
         self.tomtom_transform = tomtom_transforms[phase]
-
+        self.here_transform = here_transforms[phase]
 
     def __getitem__(self, index):
         inputs = {}
