@@ -20,5 +20,5 @@ Driving Models will be evaluated on the test partition using the mean-squared-er
 
 ## How to build and run
 1. Run `pip install -r requirements.txt` to install the necessary packages.
-2. Download the dataset from [here](https://drive.google.com/file/d/1fc5vFlnpWjxuAqQxqqJKU26DjFM7s6fo/view?usp=sharing)
+2. Download the complete dataset (150G) from [here](https://www.aicrowd.com/challenges/iccv-2019-learning-to-drive-challenge/dataset_files) or the properly downsampled dataset (700M) from [here](https://drive.google.com/file/d/1fc5vFlnpWjxuAqQxqqJKU26DjFM7s6fo/view?usp=sharing)
 3. Run LearningToDrive.ipynb using Jupyter Notebook. 
