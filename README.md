@@ -20,5 +20,5 @@ Driving Models will be evaluated on the test partition using the mean-squared-er
 
 ## How to build and run
 1. Run `pip install -r requirements.txt` to install the necessary packages.
-2. Download the dataset from [here](https://drive.google.com/open?id=1qWPJ-aeSK3CEN338jfyqnsOiM2kyC0Xz)
+2. Download the dataset from [here](https://drive.google.com/file/d/1fc5vFlnpWjxuAqQxqqJKU26DjFM7s6fo/view?usp=sharing)
 3. Run LearningToDrive.ipynb using Jupyter Notebook. 
