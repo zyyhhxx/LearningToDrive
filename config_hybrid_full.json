@@ -5,38 +5,38 @@
     "front": true,
     "tomtom": false,
     "multi_camera": {
-        "right_left": false,
+        "right_left": true,
         "rear": false
     },
     "here": {
-        "enabled": false,
+        "enabled": true,
         "number": 1,
         "frequency": 1,
         "groups": [1,2,3,4,5,6]
     },
     "data_loader": {
         "historic":{
-            "number": 2,
+            "number": 1,
             "frequency": 1
         },
         "train":{
-            "data_dir": "./data/Sample3/",
+            "data_dir": "./data/full_downsampled/",
             "csv_name": "downsample40_train.csv",
-            "batch_size": 256,
+            "batch_size": 64,
             "shuffle": true,
             "num_workers": 2
         },
         "validation": {
-            "data_dir": "./data/Sample1_downsampled_2/",
+            "data_dir": "./data/full_downsampled/",
             "csv_name": "downsample_val.csv",
             "batch_size": 64,
             "shuffle": true,
             "num_workers": 2
         },
         "test": {
-            "data_dir": "./data/Sample1_downsampled_2/",
+            "data_dir": "./data/full_downsampled/",
             "csv_name": "downsample_test.csv",
-            "batch_size": 256,
+            "batch_size": 64,
             "shuffle": false,
             "num_workers": 2
         }

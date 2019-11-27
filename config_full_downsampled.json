@@ -16,13 +16,13 @@
     },
     "data_loader": {
         "historic":{
-            "number": 4,
+            "number": 1,
             "frequency": 1
         },
         "train":{
             "data_dir": "./data/full_downsampled/",
             "csv_name": "downsample_train.csv",
-            "batch_size": 128,
+            "batch_size": 64,
             "shuffle": true,
             "num_workers": 2
         },
@@ -36,7 +36,7 @@
         "test": {
             "data_dir": "./data/full_downsampled/",
             "csv_name": "downsample_test.csv",
-            "batch_size": 128,
+            "batch_size": 64,
             "shuffle": false,
             "num_workers": 2
         }
