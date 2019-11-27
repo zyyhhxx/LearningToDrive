@@ -2,5 +2,6 @@
 /submissions
 /saved_figures
 /saved_models
+/best_models
 /.ipynb_checkpoints
 /__pycache__
