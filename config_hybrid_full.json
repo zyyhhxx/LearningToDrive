@@ -5,7 +5,7 @@
     "front": true,
     "tomtom": false,
     "multi_camera": {
-        "right_left": true,
+        "right_left": false,
         "rear": false
     },
     "here": {
